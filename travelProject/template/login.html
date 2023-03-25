@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        #rcorners1 {
+        border-radius: 25px;
+        background: #6FA48B;
+        border: 2px solid #3B3838;
+        padding: 20px;
+        }
+
+        #rcorners2 {
+        border-radius: 25px;
+        background: #161F1B;
+        border: 2px solid #3B3838;
+        padding: 20px;
+        color: white;
+        }
+<!--        width: 200px;-->
+<!--        height: 150px;-->
+
+    </style>
+</head>
+<body bgcolor="#53ECA4">
+<h1>Log In</h1>
+<form action="login" method="post">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="username/email" id="rcorners1"><br>
+    <br><input type="password" name="password" placeholder="password" id="rcorners1"><br>
+    <br><input type="submit" placeholder="Log in" id="rcorners2">
+</form>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+</body>
+</html>

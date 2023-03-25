@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <style>
+        #rcorners1 {
+        border-radius: 25px;
+        background: #6FA48B;
+        border: 2px solid #3B3838;
+        padding: 20px;
+        }
+
+        #rcorners2 {
+        border-radius: 25px;
+        background: #161F1B;
+        border: 2px solid #3B3838;
+        padding: 20px;
+        color: white;
+        }
+<!--        width: 200px;-->
+<!--        height: 150px;-->
+
+    </style>
+</head>
+<body bgcolor="#53ECA4">
+<h1>Rgister Here</h1>
+<form action="register" method="post" >
+    {% csrf_token %}
+    <input type="text" name="FirstName" placeholder="First Name" id="rcorners1"><br>
+    <br><input type="text" name="LastName"placeholder="Last Name" id="rcorners1"><br>
+    <br><input type="text" name="UserName"placeholder="User Name" id="rcorners1"><br>
+    <br><input type="text" name="Email"placeholder="Email" id="rcorners1" ><br>
+    <br><input type="password" name="Password"placeholder="Password" id="rcorners1" ><br>
+    <br><input type="password" name="password1"placeholder="Confirm Password" id="rcorners1" ><br>
+    <br><input type="submit" id="rcorners2">
+
+</form>
+{% for msg in messages %}
+{{msg}}
+{% endfor %}
+</body>
+</html>
